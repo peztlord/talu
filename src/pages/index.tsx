@@ -43,7 +43,7 @@ export default function Home() {
             src="/divisoria.webp"
             alt="divisoria"
           />
-          <p className="w-[65vw] text-gray-700 text-start mt-4" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+          <p className="w-[65vw] text-gray-700 text-center mt-4" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
             Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b>20/08/2025:</b>
           </p>
         </div>
