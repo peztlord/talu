@@ -10,7 +10,7 @@ export default function Home() {
   const [ cep, setCep ] = useState('');
   const [ modal, setModal ] = useState(false);
 
-  const listNames = ['luciano ferraz','tatiane ormond']
+  const listNames = ['Luciano ferraz','Tatiane ormond']
 
   return (
     <div className="flex flex-col items-center bg-white">
@@ -34,9 +34,9 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center mt-4">
           <p className="w-[65vw] text-gray-700 text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
-            É com grande satisfação que lhe enviamos esse convite de confirmação para nosso grande dia! 
-            Planejamos uma cerimonia intimista, então escolhemos a dedo as pessoas especias que queremos 
-            ao nosso lado.
+            É com imensa alegria que enviamos este convite de confirmação para o nosso grande dia!
+            Planejamos uma cerimônia intimista e, por isso, selecionamos com carinho cada pessoa 
+            especial que desejamos ter ao nosso lado nesse momento único.
           </p>
           <img
             className="w-auto h-[40px] object-center my-4"
@@ -44,7 +44,7 @@ export default function Home() {
             alt="divisoria"
           />
           <p className="w-[65vw] text-gray-700 text-start mt-4" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
-            Esperamos que confirme sua presença inserindo os dados a abaixo <b>até o dia 20/08/2025:</b>
+            Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b>20/08/2025:</b>
           </p>
         </div>
         <div className="flex flex-col items-center mt-4 mb-32">
