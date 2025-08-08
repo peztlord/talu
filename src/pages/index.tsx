@@ -6,19 +6,11 @@ import '@fontsource/comfortaa/400.css'
 
 export default function Home() {
 
-  const [ name, useName ] = useState('');
-  const [ cep, useCep ] = useState('');
-  const [ modal, useModal ] = useState(false);
+  const [ name, setName ] = useState('');
+  const [ cep, setCep ] = useState('');
+  const [ modal, setModal ] = useState(false);
 
   const listNames = ['luciano ferraz','tatiane ormond']
-
-  function filterName() {
-    if (listNames.includes(name)) {
-
-    } else {
-
-    }
-  }
 
   return (
     <div className="flex flex-col items-center">
@@ -64,14 +56,14 @@ export default function Home() {
             placeholder="Seu nome"
             type="text"
             value={name}
-            onChange={(e) => useName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
           {listNames.includes(name) &&
             <input
               type="text"
               placeholder="Seu CEP"
               value={cep}
-              onChange={(e) => useCep(e.target.value)}
+              onChange={(e) => setCep(e.target.value)}
               className="
                 w-[65vw] border border-gray-400 rounded-md bg-white
                 px-3 py-2 text-base text-black my-2
@@ -82,7 +74,7 @@ export default function Home() {
             <button
               type="button"
               style={{ fontFamily: 'Comfortaa, sans-serif' }}
-              onClick={() => useModal(true)}
+              onClick={() => setModal(true)}
               className="
                 w-[65vw] rounded-md bg-green-400 font-bold
                 hover:bg-green-500 focus:bg-green-600
