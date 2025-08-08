@@ -88,15 +88,15 @@ export default function Home() {
       :
       <>
         <div className="flex flex-col items-center mt-8 mb-2">
-          <h1 className="text-[42px] font-roboto mb-2" style={{ fontFamily: 'Sail, serif' }}>
+          <h1 className="text-[42px] text-gray-700 font-roboto mb-2" style={{ fontFamily: 'Sail, serif' }}>
             Tatiane & Luciano
           </h1>
-          <p className="text-[22px] font-thin" style={{ fontFamily: 'Playball, serif' }}>
+          <p className="text-[22px] text-gray-700 font-thin" style={{ fontFamily: 'Playball, serif' }}>
             12 . 02 . 2026
           </p>
         </div>
          <div className="flex flex-col items-center mt-4 mb-8">
-          <p className="w-[65vw] text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+          <p className="w-[65vw] text-gray-700 text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
             Obrigado por confirmar sua prenseça, em breve enviaremos mais inforamções!
           </p>
         </div>
