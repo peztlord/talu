@@ -13,7 +13,7 @@ export default function Home() {
   const listNames = ['luciano ferraz','tatiane ormond']
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-white">
       <div className="relative w-full">
         <img
           className="w-full h-[60vh] object-cover object-top"
@@ -95,7 +95,7 @@ export default function Home() {
             12 . 02 . 2026
           </p>
         </div>
-         <div className="flex flex-col items-center mt-4">
+         <div className="flex flex-col items-center mt-4 mb-8">
           <p className="w-[65vw] text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
             Obrigado por confirmar sua prenseça, em breve enviaremos mais inforamções!
           </p>
