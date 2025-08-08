@@ -25,15 +25,15 @@ export default function Home() {
       {(!modal) ? 
       <>
         <div className="flex flex-col items-center mt-8 mb-2">
-          <h1 className="text-[48px] font-roboto" style={{ fontFamily: 'Sail, serif' }}>
+          <h1 className="text-[48px] font-roboto text-gray-700" style={{ fontFamily: 'Sail, serif' }}>
             Save to Date
           </h1>
-          <p className="text-[22px] font-thin" style={{ fontFamily: 'Playball, serif' }}>
+          <p className="text-[22px] font-thin text-gray-700" style={{ fontFamily: 'Playball, serif' }}>
             12 . 02 . 2026
           </p>
         </div>
         <div className="flex flex-col items-center mt-4">
-          <p className="w-[65vw] text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+          <p className="w-[65vw] text-gray-700 text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
             É com grande satisfação que lhe enviamos esse convite de confirmação para nosso grande dia! 
             Planejamos uma cerimonia intimista, então escolhemos a dedo as pessoas especias que queremos 
             ao nosso lado.
@@ -43,7 +43,7 @@ export default function Home() {
             src="/divisoria.webp"
             alt="divisoria"
           />
-          <p className="w-[65vw] text-start mt-4" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+          <p className="w-[65vw] text-gray-700 text-start mt-4" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
             Esperamos que confirme sua presença inserindo os dados a abaixo <b>até o dia 20/08/2025:</b>
           </p>
         </div>
