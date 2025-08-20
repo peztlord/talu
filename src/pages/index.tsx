@@ -3,6 +3,10 @@ import '@fontsource/lancelot/400.css'
 import '@fontsource/sail/400.css'
 import '@fontsource/playball/400.css'
 import '@fontsource/comfortaa/400.css'
+import '@fontsource/monsieur-la-doulaise/400.css'
+import '@fontsource/zen-kaku-gothic-new';
+import '@fontsource/kalam';
+import '@fontsource/sue-ellen-francisco';
 
 type Item = {
   id: string;
@@ -17,11 +21,11 @@ const items: Item[] = [
 
 export default function Home() {
 
-  const [ name, setName ] = useState('');
+  const [name, setName] = useState('');
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
   const [showCep, setShowCep] = useState(false);
   const [cep, setCep] = useState("");
-  const [ modal, setModal ] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -35,63 +39,101 @@ export default function Home() {
     setSelectedItem(foundItem ?? null);
   };
 
-  // const [ name, setName ] = useState('');
-  // const [ cep, setCep ] = useState('');
-  // const [ modal, setModal ] = useState(false);
-
-  // const listNames = [{id:'1001', nome:'Luciano ferraz'},{id:'1002', nome:'Tatiane ormond'}]
-
   return (
-    <div className="flex flex-col items-center" style={{ backgroundColor: '#fcf9f6ff'}}>
-      <div className="relative w-full">
+    <div className="flex flex-col items-center" style={{ backgroundColor: '#fcf9f6ff' }}>
+      <div className={`flex flex-col w-full justify-start items-center ${!modal && 'h-[76vh]'}`}>
         <img
-          className="w-full h-[55vh] object-cover object-top"
-          style={{ filter: 'brightness(40%)'}}
-          src="/capa.webp"
+          className="w-full object-cover object-top"
+          style={{}}
+          src="/flowers-top.png"
           alt="capa"
         />
-        <div className="absolute flex flex-col items-center mt-8 mb-2 w-full" style={{top: '20vh',}}>
-          {modal ?
-            <h1 className="text-[44px] font-roboto text-white" style={{ fontFamily: 'Sail, serif' }}>
+        {!modal &&
+          <>
+            <img
+              className="w-[320px] h-[320px] object-cover object-top rounded-full mb-12 mt-[-120px]"
+              style={{}}
+              src="/capa.webp"
+              alt="capa"
+            />
+            <div className="flex items-center mt-[-20px]">
+              <h1 className="text-[60px] mx-2 mb-8 tracking-[0.04em]" style={{ fontFamily: 'Sail, serif' }}>
+                Save
+              </h1>
+              <h1 className="text-[70px] mx-2" style={{ fontFamily: 'Monsieur La Doulaise, cursive' }}>
+                the
+              </h1>
+              <h1 className="text-[60px] mx-2 mt-8 tracking-[0.04em]" style={{ fontFamily: 'Sail, serif' }}>
+                Date
+              </h1>
+            </div>
+            <h2 className="text-[22px] font-bold mt-6 tracking-[0.2em]" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
               Tatiane & Luciano
-            </h1>
-            :
-            <h1 className="text-[52px] font-roboto text-white" style={{ fontFamily: 'Sail, serif' }}>
-              Save the Date
-            </h1>
-          }
-          <p className="text-[24px] font-bold text-white" style={{ fontFamily: 'Playball, serif' }}>
-            - -- 12 . 02 . 2026 -- -
-          </p>
-        </div>
+            </h2>
+            <p className="text-[20px] tracking-[0.3em]" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>are getting married</p>
+            <div
+              className="flex text-[24px] mt-6 font-bold tracking-[0.2em] gap-4 items-center"
+              style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
+            >
+              <p>.</p>
+              <p>12</p>
+              <p>.</p>
+              <p>08</p>
+              <p>.</p>
+              <p>2026</p>
+              <p>.</p>
+            </div>
+          </>
+        }
       </div>
+      {!modal &&
+        <div className="w-full mt-28 mb-8">
+          <img
+            className="w-full object-cover object-center"
+            style={{}}
+            src="/flowers-mid.png"
+            alt="capa"
+          />
+        </div>
+      }
       {(!modal) ?
-      <div className="flex w-full"> 
-        <div className="w-[55vw] mr-4 p-4">
-          <div className="flex flex-col items-center mt-8">
-            <p className="text-gray-700 mb-4 text-[22px]" style={{ fontFamily: 'Playball, serif' }}>
+        <div className="w-full px-16">
+          <div
+            className="
+              flex flex-col items-center mt-8
+              text-gray-700 mb-4 text-[22px] gap-6
+            "
+            style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
+            <p>
               É com imensa alegria que enviamos este convite de confirmação para o nosso grande dia!
             </p>
-            <p className="text-gray-700 mb-4 text-[22px]" style={{ fontFamily: 'Playball, serif' }}>
-              Planejamos uma cerimônia intimista e, por isso, selecionamos com carinho cada pessoa 
+            <p>
+              Planejamos uma cerimônia intimista e, por isso, selecionamos com carinho cada pessoa
               especial que desejamos ter ao nosso lado nesse momento único.
             </p>
-            <p className="text-gray-700 mb-4 text-[22px]" style={{ fontFamily: 'Playball, serif' }}>
-              Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia 31/08:
+            <p>
+              Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b className="tracking-[0.2em] ml-2">31/08</b>:
             </p>
           </div>
-          <div className="flex flex-col mt-2 mb-32">
+          <div className="flex flex-col mt-12 mb-32">
             {selectedItem && (
-              <p className="text-lg text-gray-700 mb-2 text-[24px]" style={{ fontFamily: 'Playball, sans-serif' }}>
-                {selectedItem.name}
-              </p>
+              <div className="flex flex-col items-center">
+                <p
+                  className="font-bold text-gray-600 mb-6 text-[22px] text-center tracking-[0.2em]"
+                  style={{ fontFamily: 'Sail, serif' }}
+                >
+                  {selectedItem.name}
+                </p>
+                <hr className="w-[80%] text-gray-300 mb-2" />
+              </div>
             )}
             <input
               className="
-                border border-gray-400 rounded-md bg-white
-                px-3 py-2 text-base text-black my-2
-                focus:border-gray-500  placeholder:text-gray-500"
+                border border-rose-100 rounded-md bg-white
+                px-3 py-2 text-base my-2 text-gray-600
+                no-underline placeholder:text-gray-400"
               placeholder="Digite seu código"
+              style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
               type="text"
               value={name}
               onChange={handleChange}
@@ -102,19 +144,20 @@ export default function Home() {
                 placeholder="Seu CEP"
                 value={cep}
                 onChange={(e) => setCep(e.target.value)}
+                style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
                 className="
-                  border border-gray-400 rounded-md bg-white
-                  px-3 py-2 text-base text-black my-2
-                  focus:border-gray-500 placeholder:text-gray-500"
+                  border border-rose-100 rounded-md bg-white
+                  px-3 py-2 text-base my-2 text-gray-600
+                  .no-underline placeholder:text-gray-400"
               />
             }
             {cep.length == 8 &&
               <button
                 type="button"
-                style={{ fontFamily: 'Comfortaa, sans-serif' }}
                 onClick={() => setModal(true)}
+                style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
                 className="
-                  rounded-md bg-rose-400 font-bold
+                  rounded-md bg-rose-400 font-bold tracking-[0.1em]
                   hover:bg-rose-500 focus:bg-rose-600
                   text-white px-3 py-2 text-base text-black my-2"
               >
@@ -123,28 +166,18 @@ export default function Home() {
             }
           </div>
         </div>
-        <div
-          className="w-[45vw] m-0 p-0"
-          style={{ 
-            background: 'url(/bg.png)',
-            objectFit: 'cover',
-            objectPosition: 'start'
-          }}
-          >
-        </div>
-      </div>
-      :
-      <div className="w-full">
-        <div className="flex flex-col items-center mt-12 mb-2">
-          <p className="text-[28px] text-gray-700 font-thin w-[80vw] text-center" style={{ fontFamily: 'Playball, sans-serif' }}>
-            Confirmado sua presença!
-          </p>
-        </div>
-        <div className="flex flex-col items-center mt-2 mb-8">
-          <p className="text-gray-700 text-center mb-2 text-[22px] w-[80vw] text-center" style={{ fontFamily: 'Playball, serif' }}>
-            Obrigado por confirmar sua presença! Em breve, enviaremos mais informações.
-          </p>
-          <button
+        :
+        <div className="w-full h-[55vh] mt-12">
+          <div className="flex flex-col items-center mt-12 mb-2">
+            <p className="text-[32px] text-gray-700 font-thin w-[80vw] text-center" style={{ fontFamily: 'Sail, serif' }}>
+              Confirmado sua presença!
+            </p>
+          </div>
+          <div className="flex flex-col items-center mt-2 mb-8">
+            <p className="text-gray-700 text-center mb-2 text-[22px] w-[80vw] text-center" style={{ fontFamily: 'Kalam, cursive' }}>
+              Obrigado por confirmar sua presença! Em breve, enviaremos mais informações.
+            </p>
+            <button
               type="button"
               style={{ fontFamily: 'Comfortaa, sans-serif' }}
               onClick={() => setModal(true)}
@@ -154,10 +187,18 @@ export default function Home() {
                 text-white px-3 py-2 text-base text-black my-2"
             >
               Salve na sua agenda
-          </button>
+            </button>
+          </div>
         </div>
-      </div>
       }
+      <div className="w-full mt-[-80px]">
+        <img
+          className="w-full object-cover object-center"
+          style={{}}
+          src="/flowers-bot.png"
+          alt="capa"
+        />
+      </div>
     </div>
   );
 }

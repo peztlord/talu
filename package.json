@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "@fontsource/comfortaa": "^5.2.6",
+    "@fontsource/kalam": "^5.2.6",
     "@fontsource/lancelot": "^5.2.6",
+    "@fontsource/monsieur-la-doulaise": "^5.2.6",
     "@fontsource/playball": "^5.2.6",
     "@fontsource/sail": "^5.2.6",
+    "@fontsource/sue-ellen-francisco": "^5.2.6",
+    "@fontsource/zen-kaku-gothic-new": "^5.2.6",
     "next": "15.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0"
