@@ -50,7 +50,7 @@ export default function Home() {
           src="/capa.webp"
           alt="capa"
         />
-        <div className="absolute flex flex-col items-center mt-8 mb-2" style={{top: '20vh', right: '18vw'}}>
+        <div className="absolute flex flex-col items-center mt-8 mb-2 w-full" style={{top: '20vh',}}>
           {modal ?
             <h1 className="text-[44px] font-roboto text-white" style={{ fontFamily: 'Sail, serif' }}>
               Tatiane & Luciano
