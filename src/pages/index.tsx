@@ -42,7 +42,7 @@ export default function Home() {
   // const listNames = [{id:'1001', nome:'Luciano ferraz'},{id:'1002', nome:'Tatiane ormond'}]
 
   return (
-    <div className="flex flex-col items-center bg-white">
+    <div className="flex flex-col items-center" style={{ backgroundColor: '#fcf9f6ff'}}>
       <div className="relative w-full">
         <img
           className="w-full h-[55vh] object-cover object-top"
@@ -60,27 +60,29 @@ export default function Home() {
               Save the Date
             </h1>
           }
-          <p className="text-[24px] font-thin text-white" style={{ fontFamily: 'Playball, serif' }}>
-            12 . 02 . 2026
+          <p className="text-[24px] font-bold text-white" style={{ fontFamily: 'Playball, serif' }}>
+            - -- 12 . 02 . 2026 -- -
           </p>
         </div>
       </div>
       {(!modal) ?
-      <div className="flex w-full" style={{ backgroundColor: '#fcf9f6ff'}}> 
+      <div className="flex w-full"> 
         <div className="w-[55vw] mr-4 p-4">
           <div className="flex flex-col items-center mt-8">
-            <p className="text-gray-700 mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+            <p className="text-gray-700 mb-4 text-[22px]" style={{ fontFamily: 'Playball, serif' }}>
               É com imensa alegria que enviamos este convite de confirmação para o nosso grande dia!
+            </p>
+            <p className="text-gray-700 mb-4 text-[22px]" style={{ fontFamily: 'Playball, serif' }}>
               Planejamos uma cerimônia intimista e, por isso, selecionamos com carinho cada pessoa 
               especial que desejamos ter ao nosso lado nesse momento único.
             </p>
-            <p className="text-gray-700 mt-4" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
-              Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b>20/08/2025:</b>
+            <p className="text-gray-700 mb-4 text-[22px]" style={{ fontFamily: 'Playball, serif' }}>
+              Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia 31/08:
             </p>
           </div>
-          <div className="flex flex-col mt-4 mb-32">
+          <div className="flex flex-col mt-2 mb-32">
             {selectedItem && (
-              <p className="text-lg font-semibold text-gray-700 mt-4 mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+              <p className="text-lg text-gray-700 mb-2 text-[24px]" style={{ fontFamily: 'Playball, sans-serif' }}>
                 {selectedItem.name}
               </p>
             )}
@@ -113,7 +115,7 @@ export default function Home() {
                 onClick={() => setModal(true)}
                 className="
                   rounded-md bg-rose-400 font-bold
-                  hover:bg-green-500 focus:bg-green-600
+                  hover:bg-rose-500 focus:bg-rose-600
                   text-white px-3 py-2 text-base text-black my-2"
               >
                 Confirmar sua presença
@@ -132,14 +134,14 @@ export default function Home() {
         </div>
       </div>
       :
-      <>
-        <div className="flex flex-col items-center mt-12 mb-2" style={{ backgroundColor: '#fcf9f6ff'}}>
-          <p className="text-[22px] text-gray-700 font-thin">
+      <div className="w-full">
+        <div className="flex flex-col items-center mt-12 mb-2">
+          <p className="text-[28px] text-gray-700 font-thin w-[80vw] text-center" style={{ fontFamily: 'Playball, sans-serif' }}>
             Confirmado sua presença!
           </p>
         </div>
-         <div className="flex flex-col items-center mt-2 mb-8">
-          <p className="text-gray-700 text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+        <div className="flex flex-col items-center mt-2 mb-8">
+          <p className="text-gray-700 text-center mb-2 text-[22px] w-[80vw] text-center" style={{ fontFamily: 'Playball, serif' }}>
             Obrigado por confirmar sua presença! Em breve, enviaremos mais informações.
           </p>
           <button
@@ -147,19 +149,14 @@ export default function Home() {
               style={{ fontFamily: 'Comfortaa, sans-serif' }}
               onClick={() => setModal(true)}
               className="
-                rounded-md bg-green-400 font-bold
-                hover:bg-green-500 focus:bg-green-600
+                rounded-md bg-rose-400 font-bold
+                hover:bg-rose-500 focus:bg-rose-600
                 text-white px-3 py-2 text-base text-black my-2"
             >
               Salve na sua agenda
           </button>
-          <img
-            className="w-auto h-[40px] object-center my-4"
-            src="/divisoria.webp"
-            alt="divisoria"
-          />
         </div>
-      </>
+      </div>
       }
     </div>
   );
