@@ -65,80 +65,81 @@ export default function Home() {
           </p>
         </div>
       </div>
-      {(!modal) ? 
-      <>
-        <div className="flex flex-col items-center mt-8">
-          <p className="w-[65vw] text-gray-700 text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
-            É com imensa alegria que enviamos este convite de confirmação para o nosso grande dia!
-            Planejamos uma cerimônia intimista e, por isso, selecionamos com carinho cada pessoa 
-            especial que desejamos ter ao nosso lado nesse momento único.
-          </p>
-          <img
-            className="w-auto h-[40px] object-center my-4"
-            src="/divisoria.webp"
-            alt="divisoria"
-          />
-          <p className="w-[65vw] text-gray-700 text-center mt-4" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
-            Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b>20/08/2025:</b>
-          </p>
-        </div>
-        <div className="flex flex-col items-center mt-4 mb-32">
-          {selectedItem && (
-            <p className="text-lg font-semibold text-gray-700 mt-4 mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
-              {selectedItem.name}
+      {(!modal) ?
+      <div className="flex w-full" style={{ backgroundColor: '#fcf9f6ff'}}> 
+        <div className="w-[55vw] mr-4 p-4">
+          <div className="flex flex-col items-center mt-8">
+            <p className="text-gray-700 mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+              É com imensa alegria que enviamos este convite de confirmação para o nosso grande dia!
+              Planejamos uma cerimônia intimista e, por isso, selecionamos com carinho cada pessoa 
+              especial que desejamos ter ao nosso lado nesse momento único.
             </p>
-          )}
-          <input
-            className="
-              w-[65vw] border border-gray-400 rounded-md bg-white
-              px-3 py-2 text-base text-black my-2
-              focus:border-gray-500  placeholder:text-gray-500"
-            placeholder="Digite seu código"
-            type="text"
-            value={name}
-            onChange={handleChange}
-            // value={name}
-            // onChange={(e) => setName(e.target.value)}
-          />
-          {showCep &&
+            <p className="text-gray-700 mt-4" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+              Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b>20/08/2025:</b>
+            </p>
+          </div>
+          <div className="flex flex-col mt-4 mb-32">
+            {selectedItem && (
+              <p className="text-lg font-semibold text-gray-700 mt-4 mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+                {selectedItem.name}
+              </p>
+            )}
             <input
-              type="text"
-              placeholder="Seu CEP"
-              value={cep}
-              onChange={(e) => setCep(e.target.value)}
               className="
-                w-[65vw] border border-gray-400 rounded-md bg-white
+                border border-gray-400 rounded-md bg-white
                 px-3 py-2 text-base text-black my-2
-                focus:border-gray-500 placeholder:text-gray-500"
+                focus:border-gray-500  placeholder:text-gray-500"
+              placeholder="Digite seu código"
+              type="text"
+              value={name}
+              onChange={handleChange}
             />
-          }
-          {cep.length == 8 &&
-            <button
-              type="button"
-              style={{ fontFamily: 'Comfortaa, sans-serif' }}
-              onClick={() => setModal(true)}
-              className="
-                w-[65vw] rounded-md bg-green-400 font-bold
-                hover:bg-green-500 focus:bg-green-600
-                text-white px-3 py-2 text-base text-black my-2"
-            >
-              Confirmar sua presença
-            </button>
-          }
+            {showCep &&
+              <input
+                type="text"
+                placeholder="Seu CEP"
+                value={cep}
+                onChange={(e) => setCep(e.target.value)}
+                className="
+                  border border-gray-400 rounded-md bg-white
+                  px-3 py-2 text-base text-black my-2
+                  focus:border-gray-500 placeholder:text-gray-500"
+              />
+            }
+            {cep.length == 8 &&
+              <button
+                type="button"
+                style={{ fontFamily: 'Comfortaa, sans-serif' }}
+                onClick={() => setModal(true)}
+                className="
+                  rounded-md bg-rose-400 font-bold
+                  hover:bg-green-500 focus:bg-green-600
+                  text-white px-3 py-2 text-base text-black my-2"
+              >
+                Confirmar sua presença
+              </button>
+            }
+          </div>
         </div>
-      </>
+        <div
+          className="w-[45vw] m-0 p-0"
+          style={{ 
+            background: 'url(/bg.png)',
+            objectFit: 'cover',
+            objectPosition: 'start'
+          }}
+          >
+        </div>
+      </div>
       :
       <>
-        <div className="flex flex-col items-center mt-8 mb-2">
-          {/* <h1 className="text-[42px] text-gray-700 font-roboto mb-2" style={{ fontFamily: 'Sail, serif' }}>
-            Tatiane & Luciano
-          </h1> */}
+        <div className="flex flex-col items-center mt-12 mb-2" style={{ backgroundColor: '#fcf9f6ff'}}>
           <p className="text-[22px] text-gray-700 font-thin">
             Confirmado sua presença!
           </p>
         </div>
          <div className="flex flex-col items-center mt-2 mb-8">
-          <p className="w-[65vw] text-gray-700 text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
+          <p className="text-gray-700 text-center mb-2" style={{ fontFamily: 'Comfortaa, sans-serif' }}>
             Obrigado por confirmar sua presença! Em breve, enviaremos mais informações.
           </p>
           <button
@@ -146,12 +147,17 @@ export default function Home() {
               style={{ fontFamily: 'Comfortaa, sans-serif' }}
               onClick={() => setModal(true)}
               className="
-                w-[65vw] rounded-md bg-green-400 font-bold
+                rounded-md bg-green-400 font-bold
                 hover:bg-green-500 focus:bg-green-600
                 text-white px-3 py-2 text-base text-black my-2"
             >
               Salve na sua agenda
-            </button>
+          </button>
+          <img
+            className="w-auto h-[40px] object-center my-4"
+            src="/divisoria.webp"
+            alt="divisoria"
+          />
         </div>
       </>
       }
