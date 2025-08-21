@@ -57,22 +57,22 @@ export default function Home() {
               alt="capa"
             />
             <div className="flex items-center mt-[-20px]">
-              <h1 className="text-[60px] mx-2 mb-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
+              <h1 className="text-[4em] mx-2 mb-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
                 Save
               </h1>
-              <h1 className="text-[70px] mx-2" style={{ fontFamily: 'Monsieur La Doulaise, cursive' }}>
+              <h1 className="text-[3.6em] mx-2 text-gray-700" style={{ fontFamily: 'Monsieur La Doulaise, cursive' }}>
                 the
               </h1>
-              <h1 className="text-[60px] mx-2 mt-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
+              <h1 className="text-[4em] mx-2 mt-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
                 Date
               </h1>
             </div>
-            <h2 className="text-[22px] font-bold mt-6 tracking-[0.2em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
+            <h2 className="text-[1.4em] font-bold mt-6 tracking-[0.2em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
               Tatiane & Luciano
             </h2>
-            <p className="text-[20px] tracking-[0.3em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>are getting married</p>
+            <p className="text-[1.2em] tracking-[0.3em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>are getting married</p>
             <div
-              className="flex text-[24px] mt-6 font-bold tracking-[0.2em] gap-4 items-center text-gray-800"
+              className="flex text-[1.4em] mt-6 font-bold tracking-[0.2em] gap-4 items-center text-gray-800"
               style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
             >
               <p>.</p>
