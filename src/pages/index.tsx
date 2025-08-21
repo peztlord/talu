@@ -57,22 +57,22 @@ export default function Home() {
               alt="capa"
             />
             <div className="flex items-center mt-[-20px]">
-              <h1 className="text-[60px] mx-2 mb-8 tracking-[0.04em]" style={{ fontFamily: 'Sail, serif' }}>
+              <h1 className="text-[60px] mx-2 mb-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
                 Save
               </h1>
               <h1 className="text-[70px] mx-2" style={{ fontFamily: 'Monsieur La Doulaise, cursive' }}>
                 the
               </h1>
-              <h1 className="text-[60px] mx-2 mt-8 tracking-[0.04em]" style={{ fontFamily: 'Sail, serif' }}>
+              <h1 className="text-[60px] mx-2 mt-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
                 Date
               </h1>
             </div>
-            <h2 className="text-[22px] font-bold mt-6 tracking-[0.2em]" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
+            <h2 className="text-[22px] font-bold mt-6 tracking-[0.2em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
               Tatiane & Luciano
             </h2>
-            <p className="text-[20px] tracking-[0.3em]" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>are getting married</p>
+          <p className="text-[20px] tracking-[0.3em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>are getting married</p>
             <div
-              className="flex text-[24px] mt-6 font-bold tracking-[0.2em] gap-4 items-center"
+              className="flex text-[24px] mt-6 font-bold tracking-[0.2em] gap-4 items-center text-gray-800"
               style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
             >
               <p>.</p>
@@ -100,8 +100,7 @@ export default function Home() {
         <div className="w-full px-16">
           <div
             className="
-              flex flex-col items-center mt-8
-              text-gray-700 mb-4 text-[22px] gap-6
+              flex flex-col items-center mt-8 text-gray-800 mb-4 text-[22px] gap-6
             "
             style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
             <p>
@@ -119,19 +118,19 @@ export default function Home() {
             {selectedItem && (
               <div className="flex flex-col items-center">
                 <p
-                  className="font-bold text-gray-600 mb-6 text-[22px] text-center tracking-[0.2em]"
+                  className="font-bold text-gray-600 mb-2 text-[22px] text-center tracking-[0.2em]"
                   style={{ fontFamily: 'Sail, serif' }}
                 >
                   {selectedItem.name}
                 </p>
-                <hr className="w-[80%] text-gray-300 mb-2" />
+                <hr className="w-[80%] text-gray-300 mb-6" />
               </div>
             )}
             <input
               className="
                 border border-rose-100 rounded-md bg-white
                 px-3 py-2 text-base my-2 text-gray-600
-                no-underline placeholder:text-gray-400"
+                placeholder:text-gray-400"
               placeholder="Digite seu código"
               style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
               type="text"
@@ -148,7 +147,7 @@ export default function Home() {
                 className="
                   border border-rose-100 rounded-md bg-white
                   px-3 py-2 text-base my-2 text-gray-600
-                  .no-underline placeholder:text-gray-400"
+                  placeholder:text-gray-400"
               />
             }
             {cep.length == 8 &&
