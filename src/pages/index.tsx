@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center" style={{ backgroundColor: '#fcf9f6ff' }}>
-      <div className={`flex flex-col w-full justify-start items-center ${!modal && 'h-[76vh]'}`}>
+      <div className={`flex flex-col w-full justify-start items-center ${!modal && 'h-[100vh]'}`}>
         <img
           className="w-full object-cover object-top"
           style={{}}
@@ -51,7 +51,7 @@ export default function Home() {
         {!modal &&
           <>
             <img
-              className="w-[320px] h-[320px] object-cover object-top rounded-full mb-12 mt-[-120px]"
+              className="w-[30vh] h-[30vh] object-cover object-top rounded-full mb-12 mt-[-120px]"
               style={{}}
               src="/capa.webp"
               alt="capa"
@@ -70,7 +70,7 @@ export default function Home() {
             <h2 className="text-[22px] font-bold mt-6 tracking-[0.2em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
               Tatiane & Luciano
             </h2>
-          <p className="text-[20px] tracking-[0.3em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>are getting married</p>
+            <p className="text-[20px] tracking-[0.3em] text-gray-800" style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>are getting married</p>
             <div
               className="flex text-[24px] mt-6 font-bold tracking-[0.2em] gap-4 items-center text-gray-800"
               style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
@@ -83,21 +83,19 @@ export default function Home() {
               <p>2026</p>
               <p>.</p>
             </div>
+            <div className="w-full mt-16">
+              <img
+                className="w-full object-cover object-center"
+                style={{}}
+                src="/flowers-mid.png"
+                alt="capa"
+              />
+            </div>
           </>
         }
       </div>
-      {!modal &&
-        <div className="w-full mt-28 mb-8">
-          <img
-            className="w-full object-cover object-center"
-            style={{}}
-            src="/flowers-mid.png"
-            alt="capa"
-          />
-        </div>
-      }
       {(!modal) ?
-        <div className="w-full px-16">
+        <div className="w-full px-16 mt-32">
           <div
             className="
               flex flex-col items-center mt-8 text-gray-800 mb-4 text-[22px] gap-6
@@ -114,7 +112,7 @@ export default function Home() {
               Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b className="tracking-[0.2em] ml-2">31/08</b>:
             </p>
           </div>
-          <div className="flex flex-col mt-12 mb-32">
+          <div className="flex flex-col mt-12 mb-22">
             {selectedItem && (
               <div className="flex flex-col items-center">
                 <p
