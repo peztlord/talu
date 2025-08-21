@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import '@fontsource/lancelot/400.css'
 import '@fontsource/sail/400.css'
 import '@fontsource/playball/400.css'
@@ -39,6 +39,25 @@ export default function Home() {
     setSelectedItem(foundItem ?? null);
   };
 
+  const handleAddToCalendar = useCallback(() => {
+    const title = "Casamento - Tatiane e Luciano";
+    const description = "Celebração do casamento de Tatiane e Luciano, um dia especial repleto de amor e momentos inesquecíveis.";
+    const location = "Brasilia, DF, Brasil";
+
+    // Data do evento (12/02/2026 às 12h UTC até 13h UTC)
+    const startDate = "20260212T153000Z";
+    const endDate = "20260212T210000Z";
+
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      title
+    )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(
+      description
+    )}&location=${encodeURIComponent(location)}`;
+
+    // abre o link do Google Calendar
+    window.open(url, "_blank");
+  }, []);
+
   return (
     <div className="flex flex-col items-center" style={{ backgroundColor: '#fcf9f6ff' }}>
       <div className={`flex flex-col w-full justify-start items-center ${!modal && 'h-[100vh]'}`}>
@@ -51,19 +70,19 @@ export default function Home() {
         {!modal &&
           <>
             <img
-              className="w-[30vh] h-[30vh] object-cover object-top rounded-full mb-12 mt-[-120px]"
+              className="w-[30vh] h-[30vh] object-cover object-top rounded-full mb-12 mt-[-12vh]"
               style={{}}
               src="/capa.webp"
               alt="capa"
             />
-            <div className="flex items-center mt-[-20px]">
-              <h1 className="text-[4em] mx-2 mb-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
+            <div className="flex items-center mt-[-4vh]">
+              <h1 className="text-[3.8em] mx-2 mb-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
                 Save
               </h1>
               <h1 className="text-[3.6em] mx-2 text-gray-700" style={{ fontFamily: 'Monsieur La Doulaise, cursive' }}>
                 the
               </h1>
-              <h1 className="text-[4em] mx-2 mt-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
+              <h1 className="text-[3.8em] mx-2 mt-8 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Sail, serif' }}>
                 Date
               </h1>
             </div>
@@ -177,7 +196,7 @@ export default function Home() {
             <button
               type="button"
               style={{ fontFamily: 'Comfortaa, sans-serif' }}
-              onClick={() => setModal(true)}
+              onClick={() => handleAddToCalendar()}
               className="
                 rounded-md bg-rose-400 font-bold
                 hover:bg-rose-500 focus:bg-rose-600
