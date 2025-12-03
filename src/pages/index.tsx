@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
+import { supabase } from '../services/supabase';
 import '@fontsource/lancelot/400.css'
 import '@fontsource/sail/400.css'
 import '@fontsource/playball/400.css'
@@ -8,43 +9,65 @@ import '@fontsource/zen-kaku-gothic-new';
 import '@fontsource/kalam';
 import '@fontsource/sue-ellen-francisco';
 
-type Item = {
-  id: string;
+type Guest = {
+  id: number;
   name: string;
+  location: string;
+  address: string;
+  cep: string;
+  presence?: boolean;
 };
-
-const items: Item[] = [
-  { id: "123", name: "Luciano Ferraz" },
-  { id: "456", name: "Tatiane Ormond" },
-  { id: "789", name: "Cleide Ormond" },
-];
 
 export default function Home() {
 
   const [name, setName] = useState('');
-  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [guestList, setGuestList] = useState<Guest[]>([]);
+  const [selectedItem, setSelectedItem] = useState<Guest | null>(null);
   const [showCep, setShowCep] = useState(false);
   const [cep, setCep] = useState("");
   const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+    const value = e.target.value; // Removi o toUpperCase() temporariamente se for número
     setName(value);
 
-    // verifica se existe id na lista
-    const exists = items.some((item) => item.id === value);
+    // FIX: Converta item.id para String() na comparação
+    const exists = guestList.some((item) => String(item.id) === value);
     setShowCep(exists);
 
-    const foundItem = items.find((item) => item.id === value);
+    const foundItem = guestList.find((item) => String(item.id) === value);
     setSelectedItem(foundItem ?? null);
+  };
+
+  const handleConfirmPresence = async () => {
+    if (!selectedItem) return;
+
+    try {
+      // Atualiza o banco de dados com o CEP e marca como confirmado
+      const { error } = await supabase
+        .from('convidados')
+        .update({ 
+            cep: cep,
+            confirmed: true // Se tiver uma coluna booleana de confirmação
+        })
+        .eq('id', selectedItem.id);
+
+      if (error) throw error;
+
+      setModal(true); // Só abre o modal se salvar com sucesso
+    } catch (error) {
+      alert('Erro ao confirmar. Tente novamente.');
+      console.error(error);
+    }
   };
 
   const handleAddToCalendar = useCallback(() => {
     const title = "Casamento - Tatiane e Luciano";
-    const description = "Celebração do casamento de Tatiane e Luciano, um dia especial repleto de amor e momentos inesquecíveis.";
+    const description = "Celebração do casamento de Tatiane e Luciano, um dia especial repleto de momentos inesquecíveis.";
     const location = "Brasilia, DF, Brasil";
 
-    // Data do evento (12/02/2026 às 12h UTC até 13h UTC)
+    // Data do evento (12/02/2026 às 15:30h UTC até 20h UTC)
     const startDate = "20260212T153000Z";
     const endDate = "20260212T210000Z";
 
@@ -56,6 +79,29 @@ export default function Home() {
 
     // abre o link do Google Calendar
     window.open(url, "_blank");
+  }, []);
+
+  useEffect(() => {
+    const fetchGuests = async () => {
+      try {
+        // Substitua 'convidados' pelo nome real da sua tabela no Supabase
+        const { data, error } = await supabase
+          .from('guest-list')
+          .select('*');
+
+        if (error) throw error;
+
+        if (data) {
+          setGuestList(data);
+        }
+      } catch (error) {
+        console.error('Erro ao buscar convidados:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGuests();
   }, []);
 
   return (
@@ -70,7 +116,7 @@ export default function Home() {
         {!modal &&
           <>
             <img
-              className="w-[30vh] h-[30vh] object-cover object-top rounded-full mb-12 mt-[-12vh]"
+              className="w-[30vh] h-[30vh] object-cover object-top rounded-full mb-12 mt-[-5vh]"
               style={{}}
               src="/capa.webp"
               alt="capa"
@@ -102,22 +148,22 @@ export default function Home() {
               <p>2026</p>
               <p>.</p>
             </div>
-            <div className="w-full mt-16">
+            {/* <div className="w-full mt-16">
               <img
                 className="w-full object-cover object-center"
                 style={{}}
                 src="/flowers-mid.png"
-                alt="capa"
+                alt="divisor"
               />
-            </div>
+            </div> */}
           </>
         }
       </div>
       {(!modal) ?
-        <div className="w-full px-16 mt-32">
+        <div className="w-full px-16">
           <div
             className="
-              flex flex-col items-center mt-8 text-gray-800 mb-4 text-[22px] gap-6
+              flex flex-col items-centertext-gray-800 mb-4 text-[22px] gap-6
             "
             style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}>
             <p>
@@ -128,10 +174,12 @@ export default function Home() {
               especial que desejamos ter ao nosso lado nesse momento único.
             </p>
             <p>
-              Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b className="tracking-[0.2em] ml-2">31/08</b>:
+              Contamos com a sua confirmação de presença preenchendo os dados abaixo até o dia <b className="tracking-[0.2em] ml-2">20/12/25</b>:
             </p>
           </div>
           <div className="flex flex-col mt-12 mb-22">
+            {loading && <p className="text-center text-gray-400">Carregando lista de convidados...</p>}
+
             {selectedItem && (
               <div className="flex flex-col items-center">
                 <p
@@ -153,6 +201,7 @@ export default function Home() {
               type="text"
               value={name}
               onChange={handleChange}
+              disabled={loading}
             />
             {showCep &&
               <input
@@ -170,7 +219,7 @@ export default function Home() {
             {cep.length == 8 &&
               <button
                 type="button"
-                onClick={() => setModal(true)}
+                onClick={handleConfirmPresence}
                 style={{ fontFamily: 'Zen Kaku Gothic New, sans-serif' }}
                 className="
                   rounded-md bg-rose-400 font-bold tracking-[0.1em]
