@@ -110,7 +110,7 @@ export default function Home() {
                         </div>
                         <div className="flex flex-col justify-center items-center gap-[1em] my-3">
                             <div
-                                className="w-[210px] h-[120px] bg-gray-800"
+                                className="w-[210px] h-[100px] bg-gray-800"
                                 style={{
                                     position: "relative",
                                     backgroundImage: "url(" + "/talu1.jpeg" + ")",
@@ -140,7 +140,7 @@ export default function Home() {
                                 </span>
                             </div>
                             <div
-                                className="w-[210px] h-[120px] bg-gray-800"
+                                className="w-[210px] h-[100px] bg-gray-800"
                                 style={{
                                     position: "relative",
                                     backgroundImage: "url(" + "/talu2.jpeg" + ")",
@@ -169,7 +169,7 @@ export default function Home() {
                                 </span>
                             </div>
                             <div
-                                className="w-[210px] h-[120px] bg-gray-800"
+                                className="w-[210px] h-[100px] bg-gray-800"
                                 style={{
                                     position: "relative",
                                     backgroundImage: "url(" + "/talu3.jpeg" + ")",
