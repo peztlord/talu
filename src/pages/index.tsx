@@ -113,7 +113,7 @@ export default function Home() {
                                 className="w-[210px] h-[100px] bg-gray-800"
                                 style={{
                                     position: "relative",
-                                    backgroundImage: "url(" + "/talu1.jpeg" + ")",
+                                    backgroundImage: "url(" + "/box-1.png" + ")",
                                     backgroundSize: "cover",
                                     backgroundPosition: "start center",
                                     backgroundRepeat: "no-repeat",
@@ -124,11 +124,10 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "84%",
+                                        left: "15%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
-                                        // fontFamily: "'Bodoni Moda', serif",
                                         fontFamily: "'Prata', serif",
                                         fontSize: "4rem",
                                         fontWeight: "700",
@@ -143,7 +142,7 @@ export default function Home() {
                                 className="w-[210px] h-[100px] bg-gray-800"
                                 style={{
                                     position: "relative",
-                                    backgroundImage: "url(" + "/talu2.jpeg" + ")",
+                                    backgroundImage: "url(" + "/box-2.png" + ")",
                                     backgroundSize: "cover",
                                     backgroundPosition: "start center",
                                     backgroundRepeat: "no-repeat",
@@ -154,7 +153,7 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "80%",
+                                        left: "20%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
@@ -172,7 +171,7 @@ export default function Home() {
                                 className="w-[210px] h-[100px] bg-gray-800"
                                 style={{
                                     position: "relative",
-                                    backgroundImage: "url(" + "/talu3.jpeg" + ")",
+                                    backgroundImage: "url(" + "/box-3.png" + ")",
                                     backgroundSize: "cover",
                                     backgroundPosition: "start center",
                                     backgroundRepeat: "no-repeat",
@@ -183,7 +182,7 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "80%",
+                                        left: "20%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
