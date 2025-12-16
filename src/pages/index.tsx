@@ -111,7 +111,7 @@ export default function Home() {
                         </div>
                         <div className="flex flex-col justify-center items-center gap-[1em] my-3">
                             <div
-                                className="w-[210px] h-[170px] bg-gray-800"
+                                className="w-[210px] h-[120px] bg-gray-800"
                                 style={{
                                     position: "relative",
                                     backgroundImage: "url(" + "/talu1.jpeg" + ")",
@@ -125,13 +125,13 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "50%",
+                                        left: "84%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
                                         // fontFamily: "'Bodoni Moda', serif",
                                         fontFamily: "'Prata', serif",
-                                        fontSize: "5rem",
+                                        fontSize: "4rem",
                                         fontWeight: "700",
                                         lineHeight: "0.8",
                                         zIndex: "2",
@@ -141,7 +141,7 @@ export default function Home() {
                                 </span>
                             </div>
                             <div
-                                className="w-[210px] h-[170px] bg-gray-800"
+                                className="w-[210px] h-[120px] bg-gray-800"
                                 style={{
                                     position: "relative",
                                     backgroundImage: "url(" + "/talu2.jpeg" + ")",
@@ -155,12 +155,12 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "50%",
+                                        left: "80%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
                                         fontFamily: "'Prata', serif",
-                                        fontSize: "5rem",
+                                        fontSize: "4rem",
                                         fontWeight: "900",
                                         lineHeight: "0.8",
                                         zIndex: "2",
@@ -170,7 +170,7 @@ export default function Home() {
                                 </span>
                             </div>
                             <div
-                                className="w-[210px] h-[170px] bg-gray-800"
+                                className="w-[210px] h-[120px] bg-gray-800"
                                 style={{
                                     position: "relative",
                                     backgroundImage: "url(" + "/talu3.jpeg" + ")",
@@ -184,12 +184,12 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "50%",
+                                        left: "80%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
                                         fontFamily: "'Prata', serif",
-                                        fontSize: "5rem",
+                                        fontSize: "4rem",
                                         fontWeight: "900",
                                         lineHeight: "0.8",
                                         zIndex: "2",
