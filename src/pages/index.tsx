@@ -85,7 +85,7 @@ export default function Home() {
 
     return (
             <div
-                className={`flex flex-col w-full h-[100vh] justify-center items-center`}
+                className={`flex w-full h-[100vh] justify-center items-center`}
                 style={{
                     backgroundImage: "url(" + "/bg2.jpg" + ")",
                     backgroundColor: "rgba(255,255,255,0.2)",
