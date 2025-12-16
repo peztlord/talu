@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource-variable/bodoni-moda": "^5.2.7",
+    "@fontsource/abel": "^5.2.7",
+    "@fontsource/abhaya-libre": "^5.2.7",
+    "@fontsource/abril-fatface": "^5.2.7",
     "@fontsource/comfortaa": "^5.2.6",
     "@fontsource/kalam": "^5.2.6",
     "@fontsource/lancelot": "^5.2.6",
     "@fontsource/monsieur-la-doulaise": "^5.2.6",
+    "@fontsource/pinyon-script": "^5.2.8",
     "@fontsource/playball": "^5.2.6",
+    "@fontsource/prata": "^5.2.7",
     "@fontsource/sail": "^5.2.6",
     "@fontsource/sue-ellen-francisco": "^5.2.6",
     "@fontsource/zen-kaku-gothic-new": "^5.2.6",
