@@ -35,22 +35,23 @@ export default function Liste() {
     const fullPhone = cleanPhone.startsWith('55') ? cleanPhone : `55${cleanPhone}`;
 
     // 2. A mensagem formatada
-    const text = `Convite de Casamento
+    const text = `*Convite de Casamento*
+
 Com muita alegria, convidamos você para celebrar conosco este momento tão especial s2
 
-ID do convite: ${idSelect}
+ID do convite: *${idSelect}*
 
-Data: 12.02.2026
-Horário: 15h30
-Local: Brasília - DF
+Data: *12.02.2026*
+Horário: *15h30*
+Local: *Brasília - DF*
 
-Para melhor organização, pedimos a gentileza de confirmar sua presença pelo link abaixo:
+Para melhor organização, pedimos a gentileza de *confirmar sua presença* pelo link abaixo até o dia *23 de Dezembro*:
 https://www.talusavedate.site/
 
 Será uma honra contar com a sua presença !!
 
 Com carinho,
-Tatiane e Luciano`;
+*Tatiane e Luciano*`;
 
     return window.open(`https://wa.me/${fullPhone}?text=${encodeURIComponent(text)}`, "_blank");
   };
