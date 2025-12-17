@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { supabase } from '../services/supabase';
+import MusicPlayer from '../components/PlayerMusic'
 import '@fontsource/zen-kaku-gothic-new';
 import '@fontsource/abhaya-libre';
 import '@fontsource/pinyon-script';
@@ -29,10 +30,9 @@ export default function Home() {
     const [loading, setLoading] = useState(true);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value; // Removi o toUpperCase() temporariamente se for número
+        const value = e.target.value;
         setId(value);
 
-        // FIX: Converta item.id para String() na comparação
         const exists = guestList.some((item) => String(item.id) === value);
         setShowCep(exists);
 
@@ -97,18 +97,18 @@ export default function Home() {
             >
                 {!confirm ?
                     <div className="flex flex-col bg-white w-[65vw] h-auto justify-center items-center shadow-2xl">
-                        <div className="flex justify-center items-center mt-4">
+                        <div className="flex justify-center items-center mt-2">
                             <p className="text-[1.6em] mx-2 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Abhaya Libre, serif' }}>
                                 Save
                             </p>
-                            <p className="text-[1.8em] mx-2 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Pinyon Script, serif' }}>
+                            <p className="text-[1.4em] mx-2 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Pinyon Script, serif' }}>
                                 The
                             </p>
                             <p className="text-[1.6em] mx-2 tracking-[0.04em] text-gray-800" style={{ fontFamily: 'Abhaya Libre, serif' }}>
                                 Date
                             </p>
                         </div>
-                        <div className="flex flex-col justify-center items-center gap-[1em] my-3">
+                        <div className="flex flex-col justify-center items-center gap-[1em] my-2">
                             <div
                                 className="w-[210px] h-[100px] bg-gray-800"
                                 style={{
@@ -124,12 +124,12 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "15%",
+                                        left: "18%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
                                         fontFamily: "'Prata', serif",
-                                        fontSize: "4rem",
+                                        fontSize: "3.6rem",
                                         fontWeight: "700",
                                         lineHeight: "0.8",
                                         zIndex: "2",
@@ -153,12 +153,12 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "20%",
+                                        left: "18%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
                                         fontFamily: "'Prata', serif",
-                                        fontSize: "4rem",
+                                        fontSize: "3.6rem",
                                         fontWeight: "900",
                                         lineHeight: "0.8",
                                         zIndex: "2",
@@ -182,12 +182,12 @@ export default function Home() {
                                 <span
                                     style={{
                                         position: "absolute",
-                                        left: "20%",
+                                        left: "18%",
                                         transform: "translateX(-50%)",
                                         bottom: "-10px",
                                         color: "#fff",
                                         fontFamily: "'Prata', serif",
-                                        fontSize: "4rem",
+                                        fontSize: "3.6rem",
                                         fontWeight: "900",
                                         lineHeight: "0.8",
                                         zIndex: "2",
@@ -197,25 +197,22 @@ export default function Home() {
                                 </span>
                             </div>
                         </div>
-                        <div className="flex flex-col justify-center items-center my-2">
-                            {/* <p className="text-[1.4em] tracking-[0.15em] text-gray-600" style={{ fontFamily: 'Abhaya Libre, serif' }}>
-                                TATIANE & LUCIANO
-                            </p> */}
+                        <div className="flex flex-col justify-center items-center my-2 w-[210px]">
                             <p className="text-[1.4em] tracking-[0.15em] text-gray-600  mb-[-8px]" style={{ fontFamily: 'Abhaya Libre, serif' }}>
                                 TATIANE &
                             </p>
                             <p className="text-[1.4em] tracking-[0.15em] text-gray-600" style={{ fontFamily: 'Abhaya Libre, serif' }}>
                                 LUCIANO
                             </p>
-                            <p className="text-[1em] my-2 text-gray-800" style={{ fontFamily: 'Abel, serif' }}>
-                                te convidam  para celebrar o amor
+                            <p className="text-[1em] my-2 text-gray-800 text-center" style={{ fontFamily: 'Abel, serif' }}>
+                                te convidam para celebrar essa união diante de Deus.
                             </p>
-                            <p className="text-[1em] tracking-[0.08em] text-gray-800" style={{ fontFamily: 'Abel, serif' }}>
-                                às 15:30h | Brasília - DF
+                            <p className="text-[1em] tracking-[0.08em] text-gray-800 mb-2" style={{ fontFamily: 'Abel, serif' }}>
+                                às 15:30h | Brasília
                             </p>
                         </div>
                         <button
-                            className="bg-gray-800 tracking-[0.08em] text-white px-6 py-2 mb-5"
+                            className="bg-gray-900 tracking-[0.08em] text-white px-6 py-2 mb-5 w-[210px]"
                             style={{ fontFamily: 'Abel, serif' }}
                             onClick={() => setConfirm(true)}
                         >
@@ -289,7 +286,7 @@ export default function Home() {
                                     placeholder:text-gray-400 w-full"
                                 />
                                 <button
-                                    className="bg-gray-900 tracking-[0.08em] text-white w-full py-2 my-4"
+                                    className="bg-gray-900 tracking-[0.08em] text-white w-full py-2"
                                     style={{ fontFamily: 'Abel, serif' }}
                                     onClick={() => handleConfirmPresence()}
                                 >
@@ -299,6 +296,7 @@ export default function Home() {
                         }
                     </div>
                 }
+              {/* <MusicPlayer /> */}
             </div>
     );
 }
