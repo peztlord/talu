@@ -21,9 +21,12 @@ export default function Liste() {
 
     const [guestList, setGuestList] = useState<Guest[]>([]);
     const [idSelect, setIdSelect] = useState(0);
+    const [nameSelect, setNameSelect] = useState("");
+    const [msgSelect, setMsgSelect] = useState("");
     const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(true);
     const [modal, setModal] = useState(false);
+    const [modalMsg, setModalMsg] = useState(false);
 
     const getWhatsAppUrl = () => {
     // Se não tiver telefone, retorna string vazia
@@ -66,7 +69,8 @@ Com carinho,
                 if (error) throw error;
 
                 if (data) {
-                    setGuestList(data);
+                    const listaOrder = data.sort((a, b) => Number(b.presence) - Number(a.presence));
+                    setGuestList(listaOrder);
                 }
             } catch (error) {
                 console.error('Erro ao buscar convidados:', error);
@@ -79,11 +83,11 @@ Com carinho,
     }, []);
 
     return (
-            <table className="text-sm text-left text-gray-600">
-                <thead className="text-gray-70 bg-gray-100 border-b border-gray-100">
+            <table className="text-sm text-left text-gray-600 w-full">
+                <thead className="text-gray-70 bg-gray-900 border-b border-gray-100 text-white">
                     <tr>
-                        <th scope="col" className="px-6 py-3">Nome</th>
-                        <th scope="col" className="px-6 py-3 text-center">Presença</th>
+                        <th scope="col" className="px-6 py-3">Convidado</th>
+                        <th scope="col" className="px-6 py-3 text-center">Status</th>
                         <th scope="col" className="px-6 py-3 text-center"></th>
                     </tr>
                 </thead>
@@ -103,22 +107,34 @@ Com carinho,
                                         Confirmado
                                     </span>
                                 )}
-                                {guest.presence === false && (
-                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                                        Recusado
-                                    </span>
-                                )}
                                 {guest.presence === null && (
-                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-yellow-800">
+                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-400">
                                         Pendente
                                     </span>
                                 )}
                             </td>
-                            <td className="px-6 py-4 font-semibold text-gray-800">
+                            <td className="text-center px-6 py-4">
+                                {guest.msg && (
+                                    <button
+                                        type="button"
+                                        className="px-2 py-1 bg-white"
+                                        onClick={() => (
+                                            setMsgSelect(guest.msg),
+                                            setNameSelect(guest.name),
+                                            setModalMsg(true)
+                                        )}
+                                    >
+                                        <img
+                                            className="w-6 object-cover"
+                                            src="/icon-msg.png"
+                                            alt="icon-msg"
+                                        />
+                                    </button>
+                                )}
                                 {!guest.presence === true && (
                                     <button
                                         type="button"
-                                        className="rounded px-2 py-1 bg-green-500 text-white"
+                                        className="rounded px-2 py-1 bg-green-500 text-white font-semibold"
                                         onClick={() => (
                                             setIdSelect(guest.id),
                                             setModal(true)
@@ -139,8 +155,12 @@ Com carinho,
                             <div className="flex items-center justify-between">
                                 <label className="text-gray-700 text-sm">Telefone</label>
                                 <span
-                                    className="text-gray-800 text-base"
-                                    onClick={() => setModal(false)}
+                                    className="text-gray-800 text-sm border border-gray-200 px-2 rounded-full mb-1"
+                                    onClick={() => (
+                                        setModal(false),
+                                        setIdSelect(0)
+                                    )
+                                    }
                                 >
                                     x
                                 </span>
@@ -163,6 +183,39 @@ Com carinho,
                                 >
                                     disparar convite
                                 </button>
+                        </div>
+                    </div>
+                }
+                {modalMsg &&
+                    <div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+                    >
+                        <div className="bg-white shadow-2xl px-4 py-4 w-[80%] rounded-xl">
+                            <div className="flex items-center w-full justify-between border-b border-gray-300">
+                                <label
+                                    className="text-gray-700 text-xl my-2 tracking-[0.05em]"
+                                    style={{ fontFamily: 'Pinyon Script, serif' }}
+                                >{nameSelect}</label>
+                                <span
+                                    className="text-gray-800 text-sm border border-gray-200 px-2 rounded-full mb-1"
+                                    onClick={() => (
+                                        setModalMsg(false),
+                                        setMsgSelect(""),
+                                        setNameSelect("")
+                                    )
+                                    }
+                                >
+                                    x
+                                </span>
+                            </div>
+                            <div>
+                                <p
+                                    className="text-gray-800 text-base my-4"
+                                    style={{ fontFamily: 'Abhaya Libre, serif' }}
+                                >
+                                    " {msgSelect} "
+                                </p>
+                            </div>
                         </div>
                     </div>
                 }
