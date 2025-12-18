@@ -213,7 +213,7 @@ Com carinho,
                                     className="text-gray-800 text-base my-4"
                                     style={{ fontFamily: 'Abhaya Libre, serif' }}
                                 >
-                                    " {msgSelect} "
+                                    &quot; {msgSelect} &quot;
                                 </p>
                             </div>
                         </div>
