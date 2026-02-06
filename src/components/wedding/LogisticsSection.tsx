@@ -22,11 +22,6 @@ const containerVariants = {
     }
     };
 
-  const handleLocationClick = () => {
-    // Replace with actual location coordinates or Google Maps link
-    window.open('https://maps.google.com', '_blank');
-  };
-
   return (
     <section className="py-24 md:py-32 px-6 bg-white">
       <motion.div
