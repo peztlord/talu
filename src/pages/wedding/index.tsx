@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import HeroSection from '../../components/wedding/HeroSection';
 import LogisticsSection from '../../components/wedding/LogisticsSection';
 import DressCodeSection from '../../components/wedding/DressCodeSection';

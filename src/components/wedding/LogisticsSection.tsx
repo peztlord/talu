@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Calendar } from 'lucide-react';
-// import { Button } from '../ui/button';
 
 export default function LogisticsSection() {
 const containerVariants = {
