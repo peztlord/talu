@@ -1,6 +1,6 @@
 import { Heart } from 'lucide-react';
 
-export default function FooterSection() {
+export default function Footer() {
   return (
     <footer className="py-20 md:py-28 px-6 relative overflow-hidden bg-[#121212] text-white">
       {/* Imagem de Fundo Estática */}

@@ -3,7 +3,7 @@ import HeroSection from '../../components/wedding/HeroSection';
 import LogisticsSection from '../../components/wedding/LogisticsSection';
 import DressCodeSection from '../../components/wedding/DressCodeSection';
 import GiftSection from '../../components/wedding/GiftSection';
-import FooterSection from '../../components/wedding/FooterSection';
+import Footer from '../../components/wedding/Footer';
 
 export default function Wedding() {
 
@@ -13,7 +13,7 @@ export default function Wedding() {
             <LogisticsSection />
             <DressCodeSection />
             <GiftSection />
-            <FooterSection />
+            <Footer />
         </div>
     );
 }
